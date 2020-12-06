@@ -1,5 +1,7 @@
 package day1;
 
+import common.BaseMain;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URI;
@@ -7,15 +9,11 @@ import java.net.URISyntaxException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Main extends BaseMain {
 
     public static void main(String[] args) throws URISyntaxException {
         var program = new Main();
-        var resource = program.getClass().getClassLoader().getResource("day1/input.txt");
-        if (resource == null) {
-            throw new IllegalArgumentException("File not found");
-        }
-        var numbers = program.readNumbers(resource.toURI());
+        var numbers = program.readInput("day1/input.txt", program::readNumbers);
 
         var pairThatSumsToValue = program.findPair2ThatSumsToValue(numbers, 2020).orElseThrow();
         System.out.println(pairThatSumsToValue);

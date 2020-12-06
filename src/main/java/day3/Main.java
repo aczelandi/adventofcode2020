@@ -1,5 +1,7 @@
 package day3;
 
+import common.BaseMain;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URI;
@@ -9,15 +11,11 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Main extends BaseMain {
 
     public static void main(String[] args) throws URISyntaxException {
         var program = new Main();
-        var resource = program.getClass().getClassLoader().getResource("day3/input.txt");
-        if (resource == null) {
-            throw new IllegalArgumentException("File not found");
-        }
-        var inputs = program.readInputs(resource.toURI());
+        var inputs = program.readInput("day3/input.txt", program::readInputs);
         System.out.println(inputs);
         var treesOnPath1 = program.computeTreesOnPath(inputs, 3, 1);
         System.out.println(treesOnPath1);

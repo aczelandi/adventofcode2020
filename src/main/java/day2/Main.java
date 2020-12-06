@@ -1,5 +1,7 @@
 package day2;
 
+import common.BaseMain;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URI;
@@ -10,15 +12,11 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Main extends BaseMain {
 
     public static void main(String[] args) throws URISyntaxException {
         var program = new Main();
-        var resource = program.getClass().getClassLoader().getResource("day2/input.txt");
-        if (resource == null) {
-            throw new IllegalArgumentException("File not found");
-        }
-        var inputs = program.readInputs(resource.toURI());
+        var inputs = program.readInput("day2/input.txt", program::readInputs);
         System.out.println(inputs);
 
         var validPasswordsRule1 = program.getValidPasswords(inputs, new PasswordValidatorRule1());
