@@ -12,16 +12,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class SolutionImpl extends Solution<TicketRules, Integer, Long> {
+class SolutionImpl extends Solution<TicketRules, TicketRules, Integer, Long> {
 
-    public SolutionImpl(TicketRules input) {
-        super(input);
+    public SolutionImpl(TicketRules context) {
+        super(context, context);
     }
 
     @Override
     public Integer solvePart1() {
-        var nearbyTickets = this.input.nearbyCodedTickets();
-        var allIntervals = this.input.getAllIntervalsFlat();
+        var nearbyTickets = this.context1.nearbyCodedTickets();
+        var allIntervals = this.context1.getAllIntervalsFlat();
 
         var missingParameters = nearbyTickets.stream()
                 .flatMap(ticket -> ticket.getInValidParams(allIntervals).stream())
@@ -32,10 +32,10 @@ class SolutionImpl extends Solution<TicketRules, Integer, Long> {
 
     @Override
     public Long solvePart2() {
-        var allIntervals = this.input.getAllIntervalsFlat();
-        var nearbyTicketValidTickets = this.input.getValidNearbyTickets(allIntervals);
-        var allTickets = Stream.concat(nearbyTicketValidTickets.stream(), Stream.of(this.input.currentCodedTicket())).collect(Collectors.toList());
-        var labelsTotal = this.input.ticketInfos().size();
+        var allIntervals = this.context2.getAllIntervalsFlat();
+        var nearbyTicketValidTickets = this.context2.getValidNearbyTickets(allIntervals);
+        var allTickets = Stream.concat(nearbyTicketValidTickets.stream(), Stream.of(this.context2.currentCodedTicket())).collect(Collectors.toList());
+        var labelsTotal = this.context2.ticketInfos().size();
 
         var indexToAllPossibleLabels = IntStream.range(0, labelsTotal)
                 .boxed()
@@ -45,7 +45,7 @@ class SolutionImpl extends Solution<TicketRules, Integer, Long> {
                             .map(ticket -> ticket.parameters().get(index))
                             .collect(Collectors.toList());
 
-                    var labels = this.input
+                    var labels = this.context2
                             .ticketInfos()
                             .stream()
                             .filter(info -> paramsAtIndex.stream().allMatch(p -> info.matchesTicketValue(p)))
@@ -56,7 +56,7 @@ class SolutionImpl extends Solution<TicketRules, Integer, Long> {
                 }).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         var indexToLabel = this.reduceToOneValuePerIndex(indexToAllPossibleLabels);
-        var myTicket = new TicketDecoder().apply(this.input.currentCodedTicket(), indexToLabel);
+        var myTicket = new TicketDecoder().apply(this.context2.currentCodedTicket(), indexToLabel);
 
         return myTicket.getDepartureProperties();
     }

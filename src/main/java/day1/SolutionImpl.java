@@ -8,30 +8,30 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-class SolutionImpl extends Solution<List<Integer>, Long, Long> {
+class SolutionImpl extends Solution<List<Integer>, List<Integer>, Long, Long> {
 
     private final int valueToReach;
 
-    public SolutionImpl(List<Integer> input, int valueToReach) {
-        super(input);
+    public SolutionImpl(List<Integer> context, int valueToReach) {
+        super(context, context);
         this.valueToReach = valueToReach;
     }
 
     @Override
     public Long solvePart1() {
-        var pair = this.findPair2ThatSumsToValue(this.valueToReach);
+        var pair = this.findPair2ThatSumsToValue(this.context1, this.valueToReach);
         return pair.map(p -> (long) p.left() * p.right()).orElse(0L);
     }
 
     @Override
     public Long solvePart2() {
-        var numbersToFind = this.input.stream()
+        var numbersToFind = this.context2.stream()
                 .collect(Collectors.toMap(k -> k, v -> this.valueToReach - v));
 
         Optional<Map.Entry<Integer, Pair<Integer>>> elements = numbersToFind.entrySet()
                 .stream()
                 .map(e -> {
-                    var pair2ThatSumsToValue = findPair2ThatSumsToValue(e.getValue());
+                    var pair2ThatSumsToValue = findPair2ThatSumsToValue(this.context2, e.getValue());
                     return Map.entry(e.getKey(), pair2ThatSumsToValue);
                 })
                 .filter(e -> e.getValue().isPresent())
@@ -46,11 +46,11 @@ class SolutionImpl extends Solution<List<Integer>, Long, Long> {
         return (long) el.getKey() * el.getValue().left() * el.getValue().right();
     }
 
-    private Optional<Pair<Integer>> findPair2ThatSumsToValue(int value) {
-        var numbersToFind = this.input.stream()
+    private Optional<Pair<Integer>> findPair2ThatSumsToValue(List<Integer> numbers, int value) {
+        var numbersToFind = numbers.stream()
                 .collect(Collectors.toMap(k -> value - k, v -> v));
 
-        var pairOfNumber = this.input.stream()
+        var pairOfNumber = numbers.stream()
                 .filter(numbersToFind::containsKey)
                 .findAny();
 

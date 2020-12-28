@@ -1,11 +1,14 @@
 package common;
 
-public abstract class Solution<K, T1, T2> {
+public abstract class Solution<K1, K2, T1, T2> {
 
-    protected final K input;
+    protected final K1 context1;
 
-    public Solution(K input) {
-        this.input = input;
+    protected final K2 context2;
+
+    public Solution(K1 context1, K2 context2) {
+        this.context1 = context1;
+        this.context2 = context2;
     }
 
     public abstract T1 solvePart1();
