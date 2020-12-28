@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class SolutionImpl extends Solution<TicketRules, Integer, Long> {
+class SolutionImpl extends Solution<TicketRules, Integer, Long> {
 
     public SolutionImpl(TicketRules input) {
         super(input);

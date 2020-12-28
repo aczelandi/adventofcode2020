@@ -15,7 +15,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class InputReader extends BaseInputReader<TicketRules> {
+class InputReader extends BaseInputReader<TicketRules> {
 
     private final Pattern intervalsPattern = Pattern.compile("\\h?([0-9]*)-([0-9]*)(\\hor\\h([0-9]*)-([0-9]*)!)*");
 
