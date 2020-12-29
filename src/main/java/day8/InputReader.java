@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class InputReader extends BaseInputReader<List<Expression>> {
+class InputReader extends BaseInputReader<List<Expression>> {
 
     @Override
     protected List<Expression> read(URI filePath) throws FileNotFoundException {

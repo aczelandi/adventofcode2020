@@ -2,7 +2,7 @@ package day4;
 
 import common.Solution;
 
-public class SolutionImpl extends Solution<Integer, Integer, Integer, Integer> {
+class SolutionImpl extends Solution<Integer, Integer, Integer, Integer> {
 
     public SolutionImpl(Integer context1, Integer context2) {
         super(context1, context2);

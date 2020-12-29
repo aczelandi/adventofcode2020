@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class SolutionImpl extends Solution<List<Long>, List<Long>, Long, Long> {
+class SolutionImpl extends Solution<List<Long>, List<Long>, Long, Long> {
 
     private final int preambleCount;
 

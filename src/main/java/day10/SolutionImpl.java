@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SolutionImpl extends Solution<List<Integer>, List<Integer>, Integer, Long> {
+class SolutionImpl extends Solution<List<Integer>, List<Integer>, Integer, Long> {
 
     public SolutionImpl(List<Integer> context) {
         super(context, context);

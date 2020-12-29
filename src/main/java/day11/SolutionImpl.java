@@ -2,7 +2,7 @@ package day11;
 
 import common.Solution;
 
-public class SolutionImpl extends Solution<char[][], char[][], Integer, Integer> {
+class SolutionImpl extends Solution<char[][], char[][], Integer, Integer> {
 
     private final int rowCount;
 

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class SolutionImpl extends Solution<List<Pair2<Integer, String>>, List<Pair2<Integer, String>>, Long, Long> {
+class SolutionImpl extends Solution<List<Pair2<Integer, String>>, List<Pair2<Integer, String>>, Long, Long> {
 
     public SolutionImpl(List<Pair2<Integer, String>> context) {
         super(context, context);

@@ -3,7 +3,7 @@ package day3;
 import common.Solution;
 import day3.model.Forest;
 
-public class SolutionImpl extends Solution<Forest, Forest, Long, Long> {
+class SolutionImpl extends Solution<Forest, Forest, Long, Long> {
 
     public SolutionImpl(Forest context) {
         super(context, context);

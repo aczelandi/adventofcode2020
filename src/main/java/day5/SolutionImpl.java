@@ -6,7 +6,7 @@ import day5.model.SeatInfo;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SolutionImpl extends Solution<List<SeatInfo>, List<SeatInfo>, Integer, Integer> {
+class SolutionImpl extends Solution<List<SeatInfo>, List<SeatInfo>, Integer, Integer> {
 
     public SolutionImpl(List<SeatInfo> context) {
         super(context, context);

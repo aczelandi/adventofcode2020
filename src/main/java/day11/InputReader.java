@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.net.URI;
 import java.util.Scanner;
 
-public class InputReader extends BaseInputReader<char[][]> {
+class InputReader extends BaseInputReader<char[][]> {
 
     @Override
     protected char[][] read(URI filePath) throws FileNotFoundException {

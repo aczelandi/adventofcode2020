@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class InputReader extends BaseInputReader<List<Long>> {
+class InputReader extends BaseInputReader<List<Long>> {
 
     @Override
     protected List<Long> read(URI filePath) throws FileNotFoundException {

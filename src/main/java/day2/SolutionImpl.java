@@ -5,7 +5,7 @@ import day2.model.Input;
 
 import java.util.List;
 
-public class SolutionImpl extends Solution<List<Input>, List<Input>, Long, Long> {
+class SolutionImpl extends Solution<List<Input>, List<Input>, Long, Long> {
 
     public SolutionImpl(List<Input> context) {
         super(context, context);

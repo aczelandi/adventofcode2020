@@ -7,7 +7,7 @@ import day8.model.NoOp;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SolutionImpl extends Solution<List<Expression>, List<Expression>, Integer, Integer> {
+class SolutionImpl extends Solution<List<Expression>, List<Expression>, Integer, Integer> {
 
     public SolutionImpl(List<Expression> context) {
         super(context, context);
