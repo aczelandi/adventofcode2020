@@ -1,7 +1,5 @@
 package day6;
 
-import common.BaseMain;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URI;
@@ -10,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class Main extends BaseMain {
+public class Main {
 
     public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
         var inputReader = new InputReader();
