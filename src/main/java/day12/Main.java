@@ -1,11 +1,9 @@
 package day12;
 
-import common.BaseMain;
-
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 
-public class Main extends BaseMain {
+public class Main {
 
     public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
         var inputReader = new InputReader();
