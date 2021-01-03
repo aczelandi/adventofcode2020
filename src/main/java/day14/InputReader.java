@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class InputReader extends BaseInputReader<List<Operation>> {
+class InputReader extends BaseInputReader<List<Operation>> {
 
     private static final Pattern memoryOperationPattern = Pattern.compile("mem\\[([0-9]*)\\]=([0-9]*)");
 

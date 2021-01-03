@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class InputReader extends BaseInputReader<List<Integer>> {
+class InputReader extends BaseInputReader<List<Integer>> {
 
     @Override
     protected List<Integer> read(URI filePath) throws FileNotFoundException {

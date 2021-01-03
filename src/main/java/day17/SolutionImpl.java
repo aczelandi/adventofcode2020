@@ -6,7 +6,7 @@ import day17.model.Grid;
 
 import java.util.HashMap;
 
-public class SolutionImpl extends Solution<Grid, Grid, Long, Long> {
+class SolutionImpl extends Solution<Grid, Grid, Long, Long> {
 
     public SolutionImpl(Grid context1, Grid context2) {
         super(context1, context2);

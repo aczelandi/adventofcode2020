@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Function;
 
-public class InputReader<T> extends BaseInputReader<List<T>> {
+class InputReader<T> extends BaseInputReader<List<T>> {
 
     private final Function<String, T> parser;
 

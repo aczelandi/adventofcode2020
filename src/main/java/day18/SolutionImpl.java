@@ -4,7 +4,7 @@ import common.Solution;
 
 import java.util.List;
 
-public class SolutionImpl extends Solution<List<ExpressionV1Parser.ExpressionContext>, List<ExpressionV2Parser.ExpressionContext>, Long, Long> {
+class SolutionImpl extends Solution<List<ExpressionV1Parser.ExpressionContext>, List<ExpressionV2Parser.ExpressionContext>, Long, Long> {
 
     private final ExpressionV1Visitor<Long> expressionV1Visitor;
 
