@@ -8,10 +8,10 @@ public class Main {
 
     public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
         var inputReaderPart1 = new InputReader(List.of(new ValidationPredicateRule1()));
-        var inputPart1 = inputReaderPart1.readInput("day4/input.txt");
+        var inputPart1 = inputReaderPart1.readInput("day04/input.txt");
 
         var inputReaderPart2 = new InputReader(List.of(new ValidationPredicateRule1(), new ValidationPredicateRule2()));
-        var inputPart2 = inputReaderPart2.readInput("day4/input.txt");
+        var inputPart2 = inputReaderPart2.readInput("day04/input.txt");
 
         var solution = new SolutionImpl(inputPart1, inputPart2);
         var part1 = solution.solvePart1();

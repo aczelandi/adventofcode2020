@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws URISyntaxException, FileNotFoundException {
         var inputReader = new InputReader();
-        var input = inputReader.readInput("day5/input.txt");
+        var input = inputReader.readInput("day05/input.txt");
 
         var solution = new SolutionImpl(input);
         var part1 = solution.solvePart1();
